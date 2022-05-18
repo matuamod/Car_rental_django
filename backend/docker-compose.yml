@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=quotes
+      - MYSQL_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql        
+  app:
+    build: .
+    volumes:
+      - .:/car_rental_site
+    ports:
+      - 8000:8000
+    image: app:django_lab
+    container_name: django_lab_container
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+volumes:
+  db:

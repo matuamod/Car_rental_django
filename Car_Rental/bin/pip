@@ -1,4 +1,4 @@
-#!/home/matuamod/Documents/Repositories/Car_rental_django_ISP/Car_Rental/bin/python3
+#!/home/matuamod/Documents/Repositories/Car_rental_django_ISP/Car_Rental/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
