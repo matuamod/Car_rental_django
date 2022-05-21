@@ -1,14 +1,15 @@
 from django.db import models
+from django.forms import CharField
 
 
-class Owner(models.Model):
-    owner_fname = models.CharField(
+class customer(models.Model):
+    customer_fname = models.CharField(
         max_length=30, verbose_name='First name', null=False
     )
-    owner_lname = models.CharField(
+    customer_lname = models.CharField(
         max_length=30, verbose_name='Last name', null=False
     )
-    owner_db = models.DateField()
+    customer_db = models.DateField()
 
     man = 'man'
     woman = 'woman'
@@ -18,26 +19,25 @@ class Owner(models.Model):
         (woman, 'woman'),
     )
 
-    owner_gender = models.CharField(
+    customer_gender = models.CharField(
         max_length=10, verbose_name='gender', choices=gender_type
     )
-    owner_address = models.CharField(
+    customer_address = models.CharField(
         max_length=50, verbose_name='Address'
     )
-    owner_email = models.CharField(
+    customer_email=models.CharField(
         max_length=40, verbose_name='email', null=False, unique=True
     )
-    owner_password = models.CharField(
+    customer_password = models.CharField(
         max_length=30, verbose_name='email password', null=False, unique=True
     )
-    owner_number = models.CharField(
+    customer_number = models.CharField(
         max_length=20, verbose_name='Telephone_number', null=False, unique=True
     )
-    owner_city = models.CharField(
+    customer_city = models.CharField(
         max_length=20, verbose_name='City'
     )
-    owner_drive_license = models.ImageField(upload_to='img/Owner_License/')
-    isOwner = models.BooleanField(default=True)
+    customer_drive_license = models.ImageField(upload_to='img/Customer_License/')
 
     def __str__(self):
-        return self.customer_email + ': ' + str(self.customer_drive_license)
+        return self.customer_email + ': ' +  str(self.customer_drive_license)

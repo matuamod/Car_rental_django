@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=fjpi=k$%5#=(vpa&i6x=st*+75@xa03slki9)a#tn64atetti'
+SECRET_KEY = 'django-insecure-9o*znpjpl)h=2s#bj3$^a485pmnz2cr*d+zt01z6td6l(krww1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -37,12 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Customer.apps.CustomerConfig',
-    'Owner.apps.OwnerConfig',
-    'Car.apps.CarConfig',
-    'Car_Rent.apps.CarRentConfig',
-    'Car_Type.apps.CarTypeConfig',
-    'djangorestframework',
+    'rest_framework',
+    'car_type',
+    'customer.apps.CustomerConfig',
+    'owner',
+    'car',
 ]
 
 MIDDLEWARE = [
@@ -82,12 +81,13 @@ WSGI_APPLICATION = 'car_rental_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodatabase',
-        'USER': 'dbadmin',
-        'PASSWORD': '12345',
-        'HOST': 'db',
-        'PORT': '3306',
+        'NAME': 'mysql',
+		'USER': 'root',
+		'PASSWORD': 'matua535',
+		'HOST': 'db',
+		'PORT': '3306'
     }
+
 }
 
 

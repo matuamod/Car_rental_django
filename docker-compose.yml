@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  car_rental:
+    container_name: car_rental
+    image: app:django_app
+    build: ./backend
+    entrypoint: ["/run.sh"]
+    depends_on: 
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/car_rental
+    
+  db:
+    container_name: mysql_database
+    image: mysql:8.0.29
+    ports:
+      - "30000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: matua535
+      MYSQL_DATABASE: 'mysql'
+    volumes:
+      - ./db:/docker-run-initdb.d/:ro
