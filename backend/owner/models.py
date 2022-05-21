@@ -1,7 +1,8 @@
 from django.db import models
 
 
-class owner(models.Model):
+class Owner(models.Model):
+    owner_id = models.AutoField
     owner_fname = models.CharField(
         max_length=30, verbose_name='First name', null=False
     )
@@ -36,8 +37,8 @@ class owner(models.Model):
     owner_city = models.CharField(
         max_length=20, verbose_name='City'
     )
-    owner_drive_license = models.ImageField(upload_to='img/Owner_License/')
+    owner_drive_license = models.ImageField(upload_to='images/Owner_License/')
     isOwner = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.customer_email + ': ' + str(self.customer_drive_license)
+        return f'{self.owner_email}: {str(self.owner_drive_license)}'

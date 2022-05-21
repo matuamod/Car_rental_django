@@ -2,7 +2,8 @@ from django.db import models
 from django.forms import CharField
 
 
-class customer(models.Model):
+class Customer(models.Model):
+    customer_id = models.AutoField
     customer_fname = models.CharField(
         max_length=30, verbose_name='First name', null=False
     )
@@ -37,7 +38,7 @@ class customer(models.Model):
     customer_city = models.CharField(
         max_length=20, verbose_name='City'
     )
-    customer_drive_license = models.ImageField(upload_to='img/Customer_License/')
+    customer_drive_license = models.ImageField(upload_to='images/Customer_License/')
 
     def __str__(self):
-        return self.customer_email + ': ' +  str(self.customer_drive_license)
+        return f'{self.customer_email}: {str(self.customer_drive_license)})'

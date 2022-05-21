@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class Car_Type(models.Model):
+    car_type_id = models.AutoField
+    car_type = models.CharField(
+        max_length=50, verbose_name='Car type', null=False
+    )
+
