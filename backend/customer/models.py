@@ -1,5 +1,6 @@
 from django.db import models
 from django.forms import CharField
+import PIL
 
 
 class Customer(models.Model):
@@ -12,16 +13,8 @@ class Customer(models.Model):
     )
     customer_db = models.DateField()
 
-    man = 'man'
-    woman = 'woman'
-
-    gender_type = (
-        (man, 'man'),
-        (woman, 'woman'),
-    )
-
     customer_gender = models.CharField(
-        max_length=10, verbose_name='gender', choices=gender_type
+        max_length=10, verbose_name='gender', null=False
     )
     customer_address = models.CharField(
         max_length=50, verbose_name='Address'
@@ -38,7 +31,7 @@ class Customer(models.Model):
     customer_city = models.CharField(
         max_length=20, verbose_name='City'
     )
-    customer_drive_license = models.ImageField(upload_to='images/Customer_License/')
+    customer_license = models.ImageField(upload_to='images/Customer_License/', null=True)
 
     def __str__(self):
-        return f'{self.customer_email}: {str(self.customer_drive_license)})'
+        return f'{self.customer_email}: {str(self.customer_license)})'

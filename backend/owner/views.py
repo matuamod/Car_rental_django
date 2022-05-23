@@ -1,3 +1,7 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render
 
-# Create your views here.
+
+def pageNotFound(request, exception):
+    return HttpResponseNotFound(f'<h1>Page not found... </h1>')
+

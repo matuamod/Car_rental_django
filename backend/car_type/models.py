@@ -6,3 +6,6 @@ class Car_Type(models.Model):
         max_length=50, verbose_name='Car type', null=False
     )
 
+    def __str__(self): 
+        return f'{self.car_type}'
+

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Tab Logo -->
-    <link rel="icon" href="{% static 'img/Logos/TabTop2Logo.png' %}" type="image/gif" sizes="18x18">
+    <link rel="icon" href="{% static 'customer/img/Logos/Matua-logo.png' %}" type="image/gif" sizes="18x18">
 
     <title>Car Rental - Login</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/customer.css' %}">
@@ -24,7 +24,7 @@
 
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;">
-        <a href="/"><img class="navbar-brand" src="{% static 'img/Logos/Trial3Logo.png' %}" height="50"></a>
+        <a href="/"><img class="navbar-brand" src="{% static 'customer/img/Logos/Car-Rental-Logo.png' %}" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,10 +41,10 @@
 
     <h1 class="display-3" style="text-align: center;">Login</h1>
 
-    {%if Message%}
+    {%if messages%}
     <div class="container">
         <div class="alert alert-danger alert-dismissible fade show my-2" role="alert">
-            <strong>{{Message}}!!</strong>
+            <strong>{{messages}}!!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -53,15 +53,15 @@
     {%endif%}
 
     <div class="container my-5 p-3 lead" id="sign_in" width="80">
-        <form action="/LoginAuthentication/" class="px-4 py-3" method="POST">
+        <form action="/logined_customer/" class="px-4 py-3" method="POST">
             {%csrf_token%}
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1">Email address</label>
-                <input type="email" class="form-control" name="login_email" id="exampleDropdownFormEmail1" placeholder="email@example.com" autocomplete="off" required>
+                <input type="email" class="form-control" name="customer_email" id="exampleDropdownFormEmail1" placeholder="email@example.com" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="exampleDropdownFormPassword1">Password</label>
-                <input type="password" class="form-control" name="login_password" id="exampleDropdownFormPassword1" placeholder="Password" required>
+                <input type="password" class="form-control" name="customer_password" id="exampleDropdownFormPassword1" placeholder="Password" required>
             </div>
             <input type="submit" class="btn btn-primary" value="Login" name="Login" />
         </form>

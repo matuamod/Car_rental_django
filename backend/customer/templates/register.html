@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Tab Logo -->
-    <link rel="icon" href="{% static 'img/Logos/TabTop2Logo.png' %}" type="image/gif" sizes="18x18">
+    <link rel="icon" href="{% static 'customer/img/Logos/Matua-logo.png' %}" type="image/gif" sizes="18x18">
 
     <title>Car Rental - Registration</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/customer.css' %}">
@@ -24,7 +24,7 @@
 
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;">
-        <a href="/"><img class="navbar-brand" src="{% static 'img/Logos/Trial3Logo.png' %}" height="50"></a>
+        <a href="/"><img class="navbar-brand" src="{% static 'customer/img/Logos/Car-Rental-Logo.png' %}" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,10 +41,10 @@
 
     <h1 class="display-3" style="text-align: center;">Register</h1>
 
-    {%if Message%}
+    {%if messages%}
     <div class="container">
-        <div class="alert alert-warning alert-dismissible fade show my-2" role="alert">
-            <strong>{{Message}}!!</strong>
+        <div class="alert alert-danger alert-dismissible fade show my-2" role="alert">
+            <strong>{{messages}}!!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -53,19 +53,19 @@
     {%endif%}
 
     <div class="container my-5 p-3 lead" id="sign_in">
-        <form action="/RegisterCustomer/" class="px-4 py-3" method="post" enctype="multipart/form-data">
+        <form action="/registrated_customer/" class="px-4 py-3" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label for="firstname">First Name</label>
-                <input type="text" class="form-control" id="firstname" name="customer_firstname" placeholder="Mark" autocomplete="off" required>
+                <input type="text" class="form-control" id="firstname" name="customer_fname" placeholder="Matvey" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" id="lastname" name="customer_lastname" placeholder="Bond" autocomplete="off" required>
+                <input type="text" class="form-control" id="lastname" name="customer_lname" placeholder="Maximov" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="dob">Date of Birth</label>
-                <input type="date" class="form-control" id="dob" name="customer_dob" placeholder="Date of birth" autocomplete="off" required>
+                <input type="date" class="form-control" id="db" name="customer_db" placeholder="Date of birth" autocomplete="off" required>
             </div>
             <label>Gender</label>
             <div class="form-row">
@@ -83,8 +83,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="mobileno">Mobile Number</label>
-                <input type="text" class="form-control" name="customer_mobileno" id="mobileno" placeholder="0123456789" autocomplete="off" required>
+                <label for="address">Address</label>
+                <input type="text" class="form-control" name="customer_address" id="address" placeholder="44 Partizanskaya Street, apartment, studio, or floor" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
@@ -95,20 +95,20 @@
                 <input type="password" class="form-control" name="customer_password" id="password" placeholder="Password" required>
             </div>
             <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" name="customer_address" id="address" placeholder="123 Main Street, Apartment, studio, or floor" autocomplete="off" required>
+                <label for="mobile">Mobile Number</label>
+                <input type="text" class="form-control" name="customer_number" id="number" placeholder="+375 (..) ... .. .." autocomplete="off" required>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="city">City</label>
-                    <input type="text" class="form-control" name="customer_city" id="city" autocomplete="off" required>
+                    <input type="text" class="form-control" name="customer_city" id="city" placeholder="Minsk" autocomplete="off" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputZip">Upload License</label>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="customer_license" id="license" style="cursor: pointer;" required>
-                    <label class="custom-file-label" for="license">Choose file...</label>
+                    <input type="file" class="custom-file-input" name="customer_license" id="drive_license" style="cursor: pointer;" required>
+                    <label class="custom-file-label" for="license">Choose image...</label>
                 </div>
             </div>
             <input type="submit" value="Register" class="btn btn-primary" />
