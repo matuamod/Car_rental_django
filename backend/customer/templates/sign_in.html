@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -53,7 +54,7 @@
     {%endif%}
 
     <div class="container my-5 p-3 lead" id="sign_in" width="80">
-        <form action="/logined_customer/" class="px-4 py-3" method="POST">
+        <form class="px-4 py-3" method="POST">
             {%csrf_token%}
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1">Email address</label>
@@ -69,7 +70,11 @@
         <div class="px-4">
             New around here? <a href="/registration">Sign up</a>
         </div>
-    </div>
+    </div> 
+
+    <form method="POST">
+        {%csrf_token%}
+        <input type="submit" class="btn btn-primary" value="Login" name="Login" />
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

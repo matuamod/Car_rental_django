@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms import CharField
 import PIL
+from django.urls import reverse
 
 
 class Customer(models.Model):
@@ -35,3 +36,8 @@ class Customer(models.Model):
 
     def __str__(self):
         return f'{self.customer_email}: {str(self.customer_license)})'
+
+    class Meta:
+        ordering = ['customer_fname', 'customer_lname', 'customer_email']
+
+    

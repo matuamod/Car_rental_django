@@ -20,14 +20,14 @@
     <div class="container">
         <div class="row">
 
-            {% comment %} {% for c in car %}
+            {% for c in cars %}
             <div class="col-sm-4 my-5">
                 <div class="card Boxshadow h-100" style="width: 18rem;">
-                    <div id="Vehicle_{{c.car_plate}}" class="carousel slide" data-interval="false">
+                    <div id="Car_{{c.car_id}}" class="carousel slide" data-interval="false">
                         <ol class="carousel-indicators">
-                            <li data-target="#Vehicle_{{c.car_plate}}" data-slide-to="0" class="active"></li>
-                            <li data-target="#Vehicle_{{c.car_plate}}" data-slide-to="1"></li>
-                            <li data-target="#Vehicle_{{c.car_plate}}" data-slide-to="2"></li>
+                            <li data-target="#Car_{{c.car_id}}" data-slide-to="0" class="active"></li>
+                            <li data-target="#Car_{{c.car_id}}" data-slide-to="1"></li>
+                            <li data-target="#Car_{{c.car_id}}" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -40,11 +40,11 @@
                                 <img class="d-block w-100" src="{{c.car_image3.url}}" alt="Third slide" style="height:200px">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#Car_{{c.car_plate}}" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#Car_{{c.car_id}}" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#Car_{{c.car_plate}}" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#Car_{{c.car_id}}" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -53,13 +53,12 @@
                         <h5 class="card-title ">{{c.car_brand}}</h5>
                         <hr>
                         <p class="card-text "><mark><em>Model:</em></mark> {{c.car_model}}</p>
-                        <p class="card-text "><mark><em>Price (per day):</em></mark> ₹ {{c.price_per_day}}</p>
-                        <a href="{% url 'Car_Details' c.car_plate %}" class="btn btn-primary " target="_blank">Show Details</a>
+                        <p class="card-text "><mark><em>Price (per day):</em></mark> {{c.price_per_day}} byn </p>
+                        <a href="{{ c.get_absolute_url }}" class="btn btn-primary " target="_blank">Show Car</a>
                     </div>
                 </div>
             </div>
-            {% endfor %} {% endcomment %}
-
+            {% endfor %} 
 
         </div>
     </div>
