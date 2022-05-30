@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    {% block name %}{{customer.customer_firstname}}{%endblock%} {% block pagecontent %} {%if Message%}
+    {% block name %}{{customer.customer_fname}}{%endblock%} {% block pagecontent %} {%if Message%}
     <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
         <strong>{{Message}}!!</strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -23,7 +23,7 @@
             {% for c in cars %}
             <div class="col-sm-4 my-5">
                 <div class="card Boxshadow h-100" style="width: 18rem;">
-                    <div id="Vehicle_{{c.car_plate}}" class="carousel slide" data-interval="false">
+                    <div id="Car_{{c.car_plate}}" class="carousel slide" data-interval="false">
                         <ol class="carousel-indicators">
                             <li data-target="#Car_{{c.car_plate}}" data-slide-to="0" class="active"></li>
                             <li data-target="#Car_{{c.car_plate}}" data-slide-to="1"></li>

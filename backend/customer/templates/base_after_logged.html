@@ -16,9 +16,9 @@
     <!-- Tab Logo -->
     <link rel="icon" href="{% static 'customer/img/Logos/Matua-logo.png' %}" type="image/gif" sizes="18x18">
 
-    <title>Fast Rentals - {% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/customer.css' %}">
-    <script src="{% static 'js/customer.js' %}" type="text/javascript"></script>
+    <title>Car Rentals - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'customer/css/customer.css' %}">
+    <script src="{% static 'customer/js/customer.js' %}" type="text/javascript"></script>
 
 </head>
 
@@ -37,21 +37,21 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/sent_requests" style="color: #f1f1f1;"> Your sent requests</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" style="color: #f1f1f1;">Your previous rentals</a>
+
+            </ul>
+
+            {% for customer in customers %}
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'CustomerProfile' pk=customer.pk %}" style="color: #f1f1f1;" title="Your Profile">
+                        Hello! {% block name %}{{ customer.customer_fname }}{%endblock%}</a>
                 </li>
             </ul>
+            {% endfor %}
 
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="/customer_profile" style="color: #f1f1f1;" title="Your Profile">
-                        Hello! {% block name %}{%endblock%}</a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout_customer" style="color: #f1f1f1;">
+                    <a class="nav-link" href="/" style="color: #f1f1f1;">
                         Logout</a>
                 </li>
             </ul>

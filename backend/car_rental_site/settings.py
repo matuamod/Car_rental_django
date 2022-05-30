@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'customer.apps.CustomerConfig',
     'owner',
     'car',
+    'car_rent',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
