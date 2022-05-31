@@ -174,7 +174,14 @@ def CheckAvailability(request, car_id):
     rent_cars = RentCar.objects.filter(rent_car_plate=current_car.car_plate)
 
     customer_email = CustomerEmail
-    current_customer = Customer.objects.get(customer_email=customer_email)
+    customer = Customer.objects.filter(customer_email=customer_email)
+
+    if customer.exists():
+        for cust in customer:
+            current_customer = cust
+    else:
+        unsuccess_messaage = 'You not already sign in!'
+        return render(request, 'sign.in', {'messages': unsuccess_messaage})
 
     if (date_of_booking < date.today() or date_of_return < date_of_booking):
         unsuccess_message = 'Please give proper dates of booking!'
@@ -182,15 +189,17 @@ def CheckAvailability(request, car_id):
         return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                        'car': current_car, 'customer': current_customer})
 
+
     total_days = (date_of_return - date_of_booking).days + 1
     total_price = total_days * current_car.price_per_day
 
     rent_data = {'date_of_booking': date_of_booking,
                  'date_of_return': date_of_return, 'total_days': total_days, 'total_price': total_price}
 
+    
     if rent_cars.exists():
 
-        for rent_car in rent_cars:
+        for rent_car in rent_cars: 
             if(rent_car.date_of_booking >= date_of_booking and date_of_return >= rent_car.date_of_return):
                 unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}\
                                     So you can rent it from your date of booking till {rent_car.date_of_booking}\
@@ -203,14 +212,6 @@ def CheckAvailability(request, car_id):
             elif(rent_car.date_of_booking >= date_of_booking and date_of_return <= rent_car.date_of_return):
                 unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. \
                                     So you can rent it from your date of booking till {rent_car.date_of_booking}'
-
-                print(unsuccess_message)
-                return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
-                                                               'car': current_car, 'customer': current_customer})
-
-            elif(rent_car.date_of_booking <= date_of_booking and date_of_return >= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. \
-                                    So you can rent it from {rent_car.date_of_return} till your date of return'
 
                 print(unsuccess_message)
                 return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
@@ -255,7 +256,6 @@ def CheckAvailability(request, car_id):
         rent_car.save()
         return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                        'customer': current_customer, 'rent_data': rent_data})
-
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound(f'<h1>Page not found... </h1>')
