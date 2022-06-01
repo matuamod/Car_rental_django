@@ -189,18 +189,33 @@ def CheckAvailability(request, car_id):
         return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                        'car': current_car, 'customer': current_customer})
 
-
     total_days = (date_of_return - date_of_booking).days + 1
     total_price = total_days * current_car.price_per_day
 
     rent_data = {'date_of_booking': date_of_booking,
                  'date_of_return': date_of_return, 'total_days': total_days, 'total_price': total_price}
 
-    
     if rent_cars.exists():
 
-        for rent_car in rent_cars: 
-            if(rent_car.date_of_booking >= date_of_booking and date_of_return >= rent_car.date_of_return):
+        for rent_car in rent_cars:
+            if((date_of_booking < rent_car.date_of_booking and date_of_return <= rent_car.date_of_return) or
+                    (date_of_booking >= rent_car.date_of_return and date_of_return > rent_car.date_of_return)):
+                rent_car = RentCar(rent_car_brand=current_car.car_brand,
+                                   rent_car_model=current_car.car_model,
+                                   rent_car_plate=current_car.car_plate,
+                                   date_of_booking=date_of_booking,
+                                   date_of_return=date_of_return,
+                                   total_days=total_days,
+                                   total_price=total_price,
+                                   customer_email=current_customer.customer_email,
+                                   rent_status=True)
+
+                available = True
+                rent_car.save()
+                return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
+                                                               'customer': current_customer, 'rent_data': rent_data})
+
+            elif(rent_car.date_of_booking >= date_of_booking and date_of_return >= rent_car.date_of_return):
                 unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}\
                                     So you can rent it from your date of booking till {rent_car.date_of_booking}\
                                     or from {rent_car.date_of_return} till your date of return'
@@ -225,22 +240,6 @@ def CheckAvailability(request, car_id):
                 return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                                'car': current_car, 'customer': current_customer})
 
-            else:
-                rent_car = RentCar(rent_car_brand=current_car.car_brand,
-                                   rent_car_model=current_car.car_model,
-                                   rent_car_plate=current_car.car_plate,
-                                   date_of_booking=date_of_booking,
-                                   date_of_return=date_of_return,
-                                   total_days=total_days,
-                                   total_price=total_price,
-                                   customer_email=current_customer.customer_email,
-                                   rent_status=True)
-
-                available = True
-                rent_car.save()
-                return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
-                                                               'customer': current_customer, 'rent_data': rent_data})
-
     else:
         rent_car = RentCar(rent_car_brand=current_car.car_brand,
                            rent_car_model=current_car.car_model,
@@ -256,6 +255,7 @@ def CheckAvailability(request, car_id):
         rent_car.save()
         return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                        'customer': current_customer, 'rent_data': rent_data})
+
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound(f'<h1>Page not found... </h1>')
