@@ -18,23 +18,30 @@ from .forms import *
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from car_rent.models import RentCar
+import logging
 
 
 isLogin = False
 isLogout = False
 CustomerEmail = ''
 
+logger = logging.getLogger(__name__)
+
 
 class IndexUser(ListView):
     model = Car
     template_name = 'index_user.html'
     context_object_name = 'cars'
+    logger.warning('Current template_name: index_user.html')
+    logger.info('Default index_user_ page for user, which is not login')
 
 
 site_menu = ['Main window', 'About site', 'Enter']
 
 
 def about_site(request):
+    logger.warning('Current template_name: about_site.html')
+    logger.info('Show some information about our Car Rental site')
     return render(request, 'about_site.html', {'site_menu': site_menu, 'title': 'About site'})
 
 
@@ -42,6 +49,8 @@ class Home(ListView):
     model = Car
     template_name = 'home.html'
     context_object_name = 'cars'
+    logger.warning('Current template_name: home.html')
+    logger.info('User is identified, so he can rent a car!')
 
 
 class ShowCar(DetailView):
@@ -49,6 +58,8 @@ class ShowCar(DetailView):
     template_name = 'show_car_not_login.html'
     slug_url_kwarg = 'post_slug'
     context_object_name = 'car'
+    logger.warning('Current template_name: show_car_not_login.html')
+    logger.info('Only show cars for user, which is not login')
 
 
 class SignIn(FormView, FormMixin):
@@ -60,18 +71,23 @@ class SignIn(FormView, FormMixin):
     template_name = 'sign_in.html'
     success_message = 'Hello! You successfully log in!'
     success_url = reverse_lazy('Home')
+    logger.warning('Current template_name: sign_in.html')
 
     def form_valid(self, form):
         customer_email = form.cleaned_data.get('customer_email')
+        logger.info(f'Current customer email: {customer_email}')
+
         customer_password = form.cleaned_data.get('customer_password')
+        logger.info(f'Current customer password: {customer_password}')
 
         if customer_email and customer_password:
             customer = Customer.objects.filter(customer_email=customer_email,
                                                customer_password=customer_password)
             if not customer.exists():
                 unsuccess_message = 'No account with such data...'
-                print(unsuccess_message)
+                logger.warning(unsuccess_message)
                 time.sleep(1)
+                logger.warning('Redirect to sign_in')
                 return render(self.request, 'sign_in.html', {'messages': unsuccess_message})
 
             else:
@@ -82,9 +98,10 @@ class SignIn(FormView, FormMixin):
                 isLogin = True
                 isLogout = False
                 CustomerEmail = customer_email
-                print(success_message)
+                logger.warning(success_message)
                 return super().form_valid(form)
         else:
+            logger.warning('Redirect to registration')
             return redirect('registration/')
 
 
@@ -97,19 +114,21 @@ class Registration(CreateView, ModelFormMixin):
     template_name = 'register.html'
     success_message = 'Hello! You successfully made registration'
     success_url = reverse_lazy('Home')
+    logger.warning('Current template_name: register.html')
 
     def form_valid(self, form):
         global isLogin
         global isLogout
         isLogin = True
         isLogout = False
-        print(self.success_message)
+        logger.warning(self.success_message)
         return super().form_valid(form)
 
     def form_invalid(self, form):
         unsuccess_message = 'User with such account is situated...'
-        print(unsuccess_message)
+        logger.warning(unsuccess_message)
         time.sleep(1)
+        logger.warning('Redirect to registration')
         return render(self.request, 'register.html', {'messages': unsuccess_message})
 
 
@@ -122,15 +141,17 @@ class LogoutCustomer(ListView):
     context_object_name = 'cars'
     isLogin = False
     isLogout = True
+    logger.warning('Current template_name: index_user.html')
+    logger.warning('Successfully logged out')
 
 
 class CustomerProfile(TemplateView):
     template_name = 'customer_profile.html'
+    logger.warning('Current template_name: customer_profile.html')
 
     def get(self, request):
         customers = Customer.objects.all()
         args = {'customers': customers}
-        print(args)
         return render(request, self.template_name, args)
 
 
@@ -160,6 +181,7 @@ def CheckAvailability(request, car_id):
     global CustomerEmail
 
     if isLogin == False:
+        logger.warning('Redirect to sign_in')
         return redirect('/sign_in/')
 
     date_of_booking = request.POST.get('date_of_booking', '')
@@ -167,8 +189,8 @@ def CheckAvailability(request, car_id):
 
     date_of_booking = datetime.strptime(date_of_booking, '%Y-%m-%d').date()
     date_of_return = datetime.strptime(date_of_return, '%Y-%m-%d').date()
-    print(date_of_booking)
-    print(date_of_return)
+    logger.info(f'Date of booking: {date_of_booking}')
+    logger.info(f'Date of return: {date_of_return}')
 
     current_car = Car.objects.get(pk=car_id)
     rent_cars = RentCar.objects.filter(rent_car_plate=current_car.car_plate)
@@ -181,11 +203,14 @@ def CheckAvailability(request, car_id):
             current_customer = cust
     else:
         unsuccess_messaage = 'You not already sign in!'
+        logger.warning(unsuccess_messaage)
+        logger.warning('Redirect to sign_in')
         return render(request, 'sign.in', {'messages': unsuccess_messaage})
 
     if (date_of_booking < date.today() or date_of_return < date_of_booking):
         unsuccess_message = 'Please give proper dates of booking!'
-        print(unsuccess_message)
+        logger.warning(unsuccess_message)
+        logger.warning('Redirect to show_car_login')
         return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                        'car': current_car, 'customer': current_customer})
 
@@ -212,31 +237,35 @@ def CheckAvailability(request, car_id):
 
                 available = True
                 rent_car.save()
+                logger.warning('Redirect to show_car_login')
                 return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                                'customer': current_customer, 'rent_data': rent_data})
 
             elif(rent_car.date_of_booking >= date_of_booking and date_of_return >= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}\
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
                                     So you can rent it from your date of booking till {rent_car.date_of_booking}\
                                     or from {rent_car.date_of_return} till your date of return'
 
-                print(unsuccess_message)
+                logger.warning(unsuccess_message)
+                logger.warning('Redirect to show_car_login')
                 return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                                'car': current_car, 'customer': current_customer})
 
             elif(rent_car.date_of_booking >= date_of_booking and date_of_return <= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. \
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
                                     So you can rent it from your date of booking till {rent_car.date_of_booking}'
 
-                print(unsuccess_message)
+                logger.warning(unsuccess_message)
+                logger.warning('Redirect to show_car_login')
                 return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                                'car': current_car, 'customer': current_customer})
 
             elif(rent_car.date_of_booking <= date_of_booking and date_of_return <= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. \
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
                                     Change the dates please'
 
-                print(unsuccess_message)
+                logger.warning(unsuccess_message)
+                logger.warning('Redirect to show_car_login')
                 return render(request, 'show_car_login.html', {'unsuccess_message': unsuccess_message,
                                                                'car': current_car, 'customer': current_customer})
 
@@ -253,9 +282,11 @@ def CheckAvailability(request, car_id):
 
         available = True
         rent_car.save()
+        logger.warning('Redirect to show_car_login')
         return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                        'customer': current_customer, 'rent_data': rent_data})
 
 
 def pageNotFound(request, exception):
+    logger.warning('Page not found...')
     return HttpResponseNotFound(f'<h1>Page not found... </h1>')
