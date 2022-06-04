@@ -19,6 +19,7 @@ from django.urls import reverse_lazy
 from django.http import JsonResponse
 from car_rent.models import RentCar
 import logging
+import asyncio
 
 
 isLogin = False
@@ -179,6 +180,7 @@ class CustomerProfile(TemplateView):
 def CheckAvailability(request, car_id):
     global isLogin
     global CustomerEmail
+    current_customer = None
 
     if isLogin == False:
         logger.warning('Redirect to sign_in')
@@ -220,6 +222,53 @@ def CheckAvailability(request, car_id):
     rent_data = {'date_of_booking': date_of_booking,
                  'date_of_return': date_of_return, 'total_days': total_days, 'total_price': total_price}
 
+    def check_currency_for_admin(total_price):
+        end = True
+
+        async def currensy_transaction():
+            logger.info(
+                f'Start of checking currensy transaction: {datetime.now()}')
+
+            while end:
+                await asyncio.sleep(1/10)
+                logger.info(
+                    '====================Currensy transaction process====================')
+
+        async def get_usd(total_price):
+            await asyncio.sleep(1/2)
+            total_price_usd = total_price / 2.6
+            logger.info(f'Rent price of current car in USD: {total_price_usd}')
+
+        async def get_euro(total_price):
+            await asyncio.sleep(1)
+            total_price_euro = total_price / 2.75
+            logger.info(
+                f'Rent price of current car in EURO: {total_price_euro}')
+
+        async def get_pounds(total_price):
+            global end
+            await asyncio.sleep(1.5)
+            total_price_pounds = total_price / 3.3
+            logger.info(
+                f'Rent price of current car in pounds: {total_price_pounds}')
+            end = False
+
+        async def get_currency():
+            c = currensy_transaction()
+            p_usd = get_usd(total_price=total_price)
+            p_euro = get_euro(total_price=total_price)
+            p_pounds = get_pounds(total_price=total_price)
+
+            asyncio.create_task(c)
+            asyncio.create_task(p_usd)
+            asyncio.create_task(p_euro)
+            await p_pounds
+
+            logger.info(
+                f'The end of checking currensy transaction: {datetime.now()}')
+
+        asyncio.run(get_currency())
+
     if rent_cars.exists():
 
         for rent_car in rent_cars:
@@ -237,14 +286,13 @@ def CheckAvailability(request, car_id):
 
                 available = True
                 rent_car.save()
+                check_currency_for_admin(total_price=total_price)
                 logger.warning('Redirect to show_car_login')
                 return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                                'customer': current_customer, 'rent_data': rent_data})
 
             elif(rent_car.date_of_booking >= date_of_booking and date_of_return >= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
-                                    So you can rent it from your date of booking till {rent_car.date_of_booking}\
-                                    or from {rent_car.date_of_return} till your date of return'
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. So you can rent it from your date of booking till {rent_car.date_of_booking} or from {rent_car.date_of_return} till your date of return'
 
                 logger.warning(unsuccess_message)
                 logger.warning('Redirect to show_car_login')
@@ -252,8 +300,7 @@ def CheckAvailability(request, car_id):
                                                                'car': current_car, 'customer': current_customer})
 
             elif(rent_car.date_of_booking >= date_of_booking and date_of_return <= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
-                                    So you can rent it from your date of booking till {rent_car.date_of_booking}'
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. So you can rent it from your date of booking till {rent_car.date_of_booking}'
 
                 logger.warning(unsuccess_message)
                 logger.warning('Redirect to show_car_login')
@@ -261,8 +308,7 @@ def CheckAvailability(request, car_id):
                                                                'car': current_car, 'customer': current_customer})
 
             elif(rent_car.date_of_booking <= date_of_booking and date_of_return <= rent_car.date_of_return):
-                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}.\
-                                    Change the dates please'
+                unsuccess_message = f'Hi! Car is not available from {rent_car.date_of_booking} to {rent_car.date_of_return}. Change the dates please'
 
                 logger.warning(unsuccess_message)
                 logger.warning('Redirect to show_car_login')
@@ -282,6 +328,7 @@ def CheckAvailability(request, car_id):
 
         available = True
         rent_car.save()
+        check_currency_for_admin(total_price=total_price)
         logger.warning('Redirect to show_car_login')
         return render(request, 'show_car_login.html', {'Available': available, 'car': current_car,
                                                        'customer': current_customer, 'rent_data': rent_data})

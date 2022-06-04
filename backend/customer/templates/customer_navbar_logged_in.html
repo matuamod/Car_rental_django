@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger;" aria-label="" aria-labbelledby="">
         <a href="/home"><img class="navbar-brand" src="{% static 'customer/img/Logos/Car-Rental-Logo.png' %}" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,14 +40,14 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav justify-content-end">
+            {% comment %} <ul class="navbar-nav justify-content-end">
                 {% for customer in customers %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'CustomerProfile' pk=customer.pk %}" style="color: #f1f1f1;" title="Your Profile">
                         Hello! {% block name %}{{ customer.customer_fname }}{%endblock%}</a>
                 </li>
                 {% endfor %}
-            </ul>
+            </ul> {% endcomment %}
 
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
