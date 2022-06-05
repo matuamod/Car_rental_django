@@ -1,0 +1,603 @@
+Successfully logged in
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: maloy@228
+Current customer password: 1234567890
+Successfully logged in
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current customer email: maloy@228
+Current customer password: 1234567890
+Successfully logged in
+Date of booking: 2022-06-14
+Date of return: 2022-06-24
+Redirect to show_car_login
+Date of booking: 2022-03-01
+Date of return: 2022-05-13
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-05-04
+Date of return: 2022-05-13
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-01
+Date of return: 2022-06-05
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-05
+Date of return: 2022-06-07
+Redirect to show_car_login
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Current customer email: maloy@228
+Current customer password: 1234567890
+Successfully logged in
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Hello! You successfully made registration
+Current customer email: andrey@andrey
+Current customer password: 555
+Successfully logged in
+Date of booking: 2022-06-16
+Date of return: 2022-06-25
+Redirect to show_car_login
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current customer email: maloy@228
+Current customer password: 1234567890
+Successfully logged in
+Date of booking: 2022-06-04
+Date of return: 2022-06-07
+Redirect to show_car_login
+Date of booking: 2022-05-03
+Date of return: 2022-05-14
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-05
+Date of return: 2022-06-06
+Redirect to show_car_login
+Date of booking: 2022-05-17
+Date of return: 2022-05-21
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-01
+Date of return: 2022-06-07
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-05
+Date of return: 2022-06-10
+Redirect to show_car_login
+Date of booking: 2022-06-05
+Date of return: 2022-06-15
+Hi! Car is not available from 2022-06-05 to 2022-06-10. So you can rent it from your date of booking till 2022-06-05 or from 2022-06-10 till your date of return
+Redirect to show_car_login
+Date of booking: 2022-06-06
+Date of return: 2022-06-08
+Hi! Car is not available from 2022-06-05 to 2022-06-10. Change the dates please
+Redirect to show_car_login
+Date of booking: 2022-06-05
+Date of return: 2022-06-08
+Hi! Car is not available from 2022-06-05 to 2022-06-10. So you can rent it from your date of booking till 2022-06-05
+Redirect to show_car_login
+Date of booking: 2022-06-06
+Date of return: 2022-06-09
+Hi! Car is not available from 2022-06-05 to 2022-06-10. Change the dates please
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-05-10
+Date of return: 2022-05-21
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-05-10
+Date of return: 2022-05-21
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-08
+Date of return: 2022-06-18
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-09
+Date of return: 2022-06-09
+Redirect to show_car_login
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-05-03
+Date of return: 2022-05-14
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-05-24
+Date of return: 2022-05-20
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-05-24
+Date of return: 2022-05-20
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-06
+Date of return: 2022-06-08
+Redirect to show_car_login
+Date of booking: 2022-06-06
+Date of return: 2022-06-07
+Redirect to show_car_login
+Date of booking: 2022-06-06
+Date of return: 2022-06-09
+Hi! Car is not available from 2022-06-05 to 2022-06-10. Change the dates please
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-16
+Date of return: 2022-06-18
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-20
+Date of return: 2022-06-22
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-23
+Date of return: 2022-06-24
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-20
+Date of return: 2022-06-25
+Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-06-06
+Date of return: 2022-06-10
+Start of checking currensy transaction: 2022-06-04 22:33:38.850757
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in USD: 807.6923076923076
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in EURO: 763.6363636363636
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in pounds: 636.3636363636364
+The end of checking currensy transaction: 2022-06-04 22:33:40.351756
+Redirect to show_car_login
+Current customer email: maloy@228
+Current customer password: 1234567890
+Successfully logged in
+Date of booking: 2022-05-09
+Date of return: 2022-05-28
+Please give proper dates of booking!
+Redirect to show_car_login
+Date of booking: 2022-06-14
+Date of return: 2022-06-17
+Start of checking currensy transaction: 2022-06-04 22:35:48.179798
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in USD: 461.53846153846155
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in EURO: 436.3636363636364
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in pounds: 363.6363636363637
+The end of checking currensy transaction: 2022-06-04 22:35:49.680546
+Redirect to show_car_login
