@@ -601,3 +601,101 @@ Rent price of current car in EURO: 436.3636363636364
 Rent price of current car in pounds: 363.6363636363637
 The end of checking currensy transaction: 2022-06-04 22:35:49.680546
 Redirect to show_car_login
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Current template_name: index_user.html
+Default index_user_ page for user, which is not login
+Current template_name: home.html
+User is identified, so he can rent a car!
+Current template_name: show_car_not_login.html
+Only show cars for user, which is not login
+Current template_name: sign_in.html
+Current template_name: register.html
+Current template_name: index_user.html
+Successfully logged out
+Current template_name: customer_profile.html
+Current template_name: about_site.html
+Show some information about our Car Rental site
+Redirect to sign_in
+Current customer email: mom@mom
+Current customer password: mom
+Successfully logged in
+Date of booking: 2022-07-14
+Date of return: 2022-07-29
+Start of checking currensy transaction: 2022-06-06 09:44:26.709149
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in USD: 2584.6153846153843
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in EURO: 2443.6363636363635
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+====================Currensy transaction process====================
+Rent price of current car in pounds: 2036.3636363636365
+The end of checking currensy transaction: 2022-06-06 09:44:28.210940
+Redirect to show_car_login

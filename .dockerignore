@@ -1,0 +1,6 @@
+data/
+db.sqlite3
+media/
+venv/
+docker-compose.yml
+Dockerfile
